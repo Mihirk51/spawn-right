@@ -21,7 +21,7 @@ const tournaments = [
   },
 ];
 
-export const TournamentsList = () => {
+export function TournamentsList() {
   return (
     <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm rounded-xl p-6">
       <h2 className="text-xl font-bold text-white mb-4">Tournaments</h2>
@@ -47,4 +47,4 @@ export const TournamentsList = () => {
       </div>
     </div>
   );
-};
+}

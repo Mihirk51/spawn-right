@@ -7,7 +7,7 @@ const stats = [
   { value: '9000', label: 'Players' },
 ];
 
-export const Statistics = () => {
+export function Statistics() {
   return (
     <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm rounded-xl p-6">
       <h2 className="text-xl font-bold text-white mb-4">Statistics</h2>
@@ -22,4 +22,4 @@ export const Statistics = () => {
       </div>
     </div>
   );
-};
+}

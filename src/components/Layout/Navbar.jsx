@@ -2,7 +2,7 @@ import React from 'react';
 import { Search } from 'lucide-react';
 import { Logo } from '../common/Logo';
 
-export const Navbar = () => {
+export function Navbar() {
   return (
     <nav className="bg-transparent py-4">
       <div className="max-w-7xl mx-auto px-4">
@@ -31,4 +31,4 @@ export const Navbar = () => {
       </div>
     </nav>
   );
-};
+}

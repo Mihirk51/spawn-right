@@ -18,7 +18,7 @@ const matches = [
   },
 ];
 
-export const LiveMatches = () => {
+export function LiveMatches() {
   return (
     <div className="mb-8">
       <h2 className="flex items-center text-xl font-bold text-white mb-4">
@@ -48,4 +48,4 @@ export const LiveMatches = () => {
       </div>
     </div>
   );
-};
+}

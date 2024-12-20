@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TrustedPartners = () => {
+export function TrustedPartners() {
   return (
     <div className="mt-20">
       <h3 className="text-white text-xl mb-8">We are trusted by -</h3>
@@ -20,4 +20,4 @@ export const TrustedPartners = () => {
       </div>
     </div>
   );
-};
+}

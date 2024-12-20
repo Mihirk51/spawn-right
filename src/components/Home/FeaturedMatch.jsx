@@ -1,11 +1,7 @@
 import React from 'react';
-import type { Match } from '../../types';
+import PropTypes from 'prop-types';
 
-interface FeaturedMatchProps {
-  match: Match;
-}
-
-export const FeaturedMatch: React.FC<FeaturedMatchProps> = ({ match }) => {
+export const FeaturedMatch = ({ match }) => {
   return (
     <div className="bg-gray-800 rounded-lg p-6 text-white">
       <div className="flex justify-between items-center mb-4">
@@ -42,4 +38,28 @@ export const FeaturedMatch: React.FC<FeaturedMatchProps> = ({ match }) => {
       </div>
     </div>
   );
+};
+
+FeaturedMatch.propTypes = {
+  match: PropTypes.shape({
+    tournament: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired,
+    status: PropTypes.string.isRequired,
+    team1: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      logo: PropTypes.string.isRequired,
+      rank: PropTypes.number.isRequired
+    }).isRequired,
+    team2: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      logo: PropTypes.string.isRequired,
+      rank: PropTypes.number.isRequired
+    }).isRequired,
+    score: PropTypes.shape({
+      team1: PropTypes.number.isRequired,
+      team2: PropTypes.number.isRequired
+    }),
+    startTime: PropTypes.string.isRequired
+  }).isRequired
 };
