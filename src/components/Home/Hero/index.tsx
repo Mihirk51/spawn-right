@@ -1,12 +1,7 @@
-/**
- * Hero section component for the home page
- * @module components/Home/Hero
- */
-
 import React from 'react';
-import { Button } from '@/components/common/Button';
+import { Button } from '../../common/Button';
 
-export const Hero: React.FC = () => {
+export const Hero = () => {
   return (
     <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm rounded-xl p-8 mb-8">
       <h1 className="text-5xl font-bold text-white mb-4">

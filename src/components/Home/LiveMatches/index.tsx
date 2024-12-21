@@ -1,11 +1,6 @@
-/**
- * Live matches section component
- * @module components/Home/LiveMatches
- */
-
 import React from 'react';
 import { MatchCard } from './MatchCard';
-import type { Match } from '@/types';
+import type { Match } from '../../../types';
 
 interface LiveMatchesProps {
   matches: Match[];
@@ -20,7 +15,7 @@ export const LiveMatches: React.FC<LiveMatchesProps> = ({ matches }) => {
       </h2>
       
       <div className="space-y-4">
-        {matches.map((match) => (
+        {matches.map(match => (
           <MatchCard key={match.id} match={match} />
         ))}
       </div>
