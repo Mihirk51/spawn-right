@@ -70,28 +70,33 @@ export interface Player {
 
 /** Match information */
 export interface Match {
-  /** Unique identifier for the match */
   id: string;
-  /** Game being played */
   game: GameType;
-  /** First team */
   team1: Team;
-  /** Second team */
   team2: Team;
-  /** Match start time in ISO format */
   startTime: string;
-  /** Current match status */
   status: MatchStatus;
-  /** Current score (if match is live or completed) */
   score?: {
     team1: number;
     team2: number;
   };
-  /** Tournament information */
   tournament: {
     id: string;
     name: string;
   };
+}
+
+export interface Tournament {
+  id: string;
+  name: string;
+  game: GameType;
+  startDate: string;
+  endDate: string;
+  prizePool: number;
+  teams: string[];
+  status: MatchStatus;
+  location: string;
+  format: string;
 }
 
 /** Generic API response wrapper */

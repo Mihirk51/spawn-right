@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Hero = () => {
   return (
     <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-sm rounded-xl p-8 mb-8">

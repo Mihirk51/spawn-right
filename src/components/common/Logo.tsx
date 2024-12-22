@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/logo_title.png'; // Adjust the path as necessary
 
 export const Logo = () => {

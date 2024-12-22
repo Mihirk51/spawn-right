@@ -1,6 +1,6 @@
 import { apiClient } from './client';
 import type { PlayersResponse, PlayerFilters } from './types';
-import type { Player } from '@/types';
+import type { Player, ApiResponse } from '@/types';
 
 export const playersApi = {
   getAll: async (filters?: PlayerFilters): Promise<Player[]> => {

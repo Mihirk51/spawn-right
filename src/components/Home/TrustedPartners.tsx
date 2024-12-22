@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const TrustedPartners = () => {
 //remove these logos later for obvious copyright reasons
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const stats = [
   { value: '65 251', label: 'Tournaments' },
   { value: '14 456', label: 'Matches' },
