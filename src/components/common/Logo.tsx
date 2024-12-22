@@ -1,13 +1,10 @@
 import React from 'react';
-import { Gamepad2 } from 'lucide-react';
+import logo from '../../assets/logo_title.png'; // Adjust the path as necessary
 
 export const Logo = () => {
   return (
     <div className="flex items-center space-x-2">
-      <div className="bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded">
-        <Gamepad2 className="h-6 w-6 text-white" />
-      </div>
-      <span className="text-white text-xl font-bold">Spawn Right</span>
+      <img src={logo} alt="Logo" style={{ width: '400px', height: 'auto' }} />
     </div>
   );
 };

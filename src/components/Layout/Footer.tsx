@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from '../common/Logo';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,7 +8,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-4 gap-8">
           <div>
-            <Logo />
+            <Link to="/">
+              <Logo />
+            </Link>
             <p className="mt-4 text-gray-400">
               Your ultimate destination for Indian esports coverage
             </p>
