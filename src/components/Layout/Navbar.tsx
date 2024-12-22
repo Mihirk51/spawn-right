@@ -1,13 +1,16 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Logo } from '../common/Logo';
+import { Link } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   return (
     <nav className="bg-transparent py-4">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           
           <div className="relative w-80">
             <input
