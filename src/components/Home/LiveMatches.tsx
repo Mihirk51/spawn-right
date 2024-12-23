@@ -1,5 +1,3 @@
-import React from 'react';
-
 const matches = [
   {
     team1: { name: 'TNL', logo: '🎮' },

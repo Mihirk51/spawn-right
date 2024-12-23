@@ -1,6 +1,6 @@
 import { apiClient } from './client';
 import type { TeamsResponse, TeamFilters } from './types';
-import type { Team } from '@/types';
+import type { Team, ApiResponse } from '@/types';
 
 export const teamsApi = {
   getAll: async (filters?: TeamFilters): Promise<Team[]> => {

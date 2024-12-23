@@ -1,6 +1,6 @@
 import { apiClient } from './client';
 import type { MatchesResponse, MatchFilters } from './types';
-import type { Match } from '@/types';
+import type { Match, ApiResponse } from '@/types';
 
 export const matchesApi = {
   getLive: async (): Promise<Match[]> => {

@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { useLogger } from '../../hooks/useLogger';
+import backgroundImage from '../../assets/backgroud.png';
 
 export const Layout: React.FC = () => {
   const location = useLocation();
@@ -13,7 +14,7 @@ export const Layout: React.FC = () => {
   }, [location.pathname, logNavigation]);
 
   return (
-    <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: 'url(src/assets/backgroud_figma.png)' }}>
+    <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 py-8">
         <Outlet />
