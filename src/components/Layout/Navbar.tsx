@@ -21,13 +21,13 @@ export const Navbar: React.FC = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
           </div>
 
-          <div className="flex items-center space-x-8">
-            <a href="#" className="text-white hover:text-pink-500">Tournaments</a>
-            <a href="#" className="text-white hover:text-pink-500">Products</a>
-            <a href="#" className="text-white hover:text-pink-500">Games</a>
+          <div className="flex items-center space-x-4">
+            <Link to="/tournaments" className="text-white hover:text-pink-500">Tournaments</Link>
+            <Link to="/products" className="text-white hover:text-pink-500">Products</Link>
+            <Link to="/games" className="text-white hover:text-pink-500">Games</Link>
             <Link to="/about" className="text-white hover:text-pink-500">About</Link>
             <button className="bg-white text-black px-6 py-2 rounded-full font-medium">
-              Log In
+              Log In / Sign Up
             </button>
           </div>
         </div>
