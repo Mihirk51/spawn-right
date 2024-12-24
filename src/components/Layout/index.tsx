@@ -16,7 +16,7 @@ export const Layout: React.FC = () => {
   return (
     <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <Navbar />
-      <main className="w-full px-4 md:px-8 lg:px-16 xl:px-32 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <Outlet />
       </main>
       <Footer />
