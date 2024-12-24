@@ -7,6 +7,7 @@ import { Teams } from './pages/Teams';
 import { Players } from './pages/Players';
 import { Rankings } from './pages/Rankings';
 import { News } from './pages/News';
+import { About } from './pages/About';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="players" element={<Players />} />
           <Route path="rankings" element={<Rankings />} />
           <Route path="news" element={<News />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
