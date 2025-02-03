@@ -22,16 +22,15 @@ team_logo NVARCHAR(255)
 );
 
 
-CREATE TABLE tournaments(
-tournament_id INT PRIMARY KEY,
-name NVARCHAR(255) NOT NULL,
-location NVARCHAR(255),
-prize_pool DECIMAL (18,2),
-start_date DATE NOT NULL, 
-end_date DATE NOT NULL,
-no_teams INT, 
-logo NVARCHAR(255),
-website NVARCHAR(255),
+CREATE TABLE tournaments (
+    tournament_id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(255) NOT NULL,
+    country CHAR(2),
+    prize_pool DECIMAL(18,2),
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    logo NVARCHAR(255),
+    link NVARCHAR(255)
 );
 
 CREATE TABLE player_team(
