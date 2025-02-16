@@ -11,6 +11,7 @@ import { Tournaments } from './pages/Tournaments';
 import { Products } from './pages/Products';
 import { Games } from './pages/Games';
 import { About } from './pages/About';
+import Login from './components/Login';
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,8 @@ const App: React.FC = () => {
           <Route path="games" element={<Games />} />
           <Route path="about" element={<About />} />
           <Route path="news" element={<News />} />
+          <Route path="login" element={<Login />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
