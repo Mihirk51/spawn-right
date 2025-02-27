@@ -1,13 +1,16 @@
-import React from "react";
+
+import type React from "react"
+import { useState } from "react"
 
 interface Tournament {
-  name: string;
-  status: string;
-  prize_pool: string;
-  dates: string;
-  country: string;
-  link: string;
-  logo: string;
+  name: string
+  status: string
+  prize_pool: string
+  dates: string
+  country: string
+  link: string
+  logo: string
+  category: "Custom" | "Official" | "Third-party"
 }
 
 const tournaments: Tournament[] = [
@@ -19,6 +22,7 @@ const tournaments: Tournament[] = [
     country: "un",
     link: "https://www.vlr.gg/event/2305/challengers-league-2025-southeast-asia-split-1",
     logo: "https://owcdn.net/img/6009f963577f4.png",
+    category: "Official",
   },
   {
     name: "China Evolution Series: Act 1",
@@ -28,6 +32,7 @@ const tournaments: Tournament[] = [
     country: "cn",
     link: "https://www.vlr.gg/event/2339/china-evolution-series-act-1",
     logo: "https://owcdn.net/img/65dd97cea9a25.png",
+    category: "Third-party",
   },
   {
     name: "Champions Tour 2025: Masters Bangkok",
@@ -37,6 +42,7 @@ const tournaments: Tournament[] = [
     country: "th",
     link: "https://www.vlr.gg/event/2281/champions-tour-2025-masters-bangkok",
     logo: "https://owcdn.net/img/603bfd7bf3f54.png",
+    category: "Official",
   },
   {
     name: "BREAKPOINT 2025: Split 2",
@@ -46,6 +52,7 @@ const tournaments: Tournament[] = [
     country: "un",
     link: "https://www.vlr.gg/event/2332/breakpoint-2025-split-2",
     logo: "https://owcdn.net/img/676a875158d0d.png",
+    category: "Custom",
   },
   {
     name: "MVT 3: Finals",
@@ -55,6 +62,7 @@ const tournaments: Tournament[] = [
     country: "mn",
     link: "https://www.vlr.gg/event/2329/mvt-3-finals",
     logo: "https://owcdn.net/img/66dac0b39d43c.png",
+    category: "Third-party",
   },
   {
     name: "Champions Tour 2025: China Kickoff",
@@ -64,16 +72,39 @@ const tournaments: Tournament[] = [
     country: "cn",
     link: "https://www.vlr.gg/event/2275/champions-tour-2025-china-kickoff",
     logo: "https://owcdn.net/img/65dd97cea9a25.png",
+    category: "Official",
   },
-];
+]
 
 export const Tournaments: React.FC = () => {
+  const categories = ["All", "Custom", "Official", "Third-party"]
+  const [activeCategory, setActiveCategory] = useState("All")
+
+  const filteredTournaments = tournaments.filter(
+    (tournament) => activeCategory === "All" || tournament.category === activeCategory,
+  )
+
   return (
-    <div className="min-h-screen w-full  ">
+    <div className="min-h-screen w-full">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold  text-white mb-10">Tournaments</h1>
+        <h1 className="text-4xl font-bold text-white mb-10">Tournaments</h1>
+
+        <div className="flex space-x-4 mb-8 overflow-x-auto pb-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeCategory === category ? "bg-white/40 text-white" : "bg-white/10 text-gray-300 hover:bg-white/20"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {tournaments.map((tournament, index) => (
+          {filteredTournaments.map((tournament, index) => (
             <div
               key={index}
               className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-[#4deeea]"
@@ -92,8 +123,8 @@ export const Tournaments: React.FC = () => {
                       tournament.status === "Ongoing"
                         ? "bg-green-500"
                         : tournament.status === "Upcoming"
-                        ? "bg-yellow-500"
-                        : "bg-red-500"
+                          ? "bg-yellow-500"
+                          : "bg-red-500"
                     } text-white`}
                   >
                     {tournament.status}
@@ -103,17 +134,21 @@ export const Tournaments: React.FC = () => {
                 <p className="text-gray-300 mb-2">Prize Pool: {tournament.prize_pool}</p>
                 <p className="text-gray-300 mb-2">Dates: {tournament.dates}</p>
                 <p className="text-gray-300 mb-4">Country: {tournament.country.toUpperCase()}</p>
-                <button
-                  className="w-full bg-white/40 hover:bg-white/20  text-white font-semibold py-2 px-4 rounded-full duration-300"
-                  onClick={() => window.open(tournament.link, "_blank")}
-                >
-                  View Tournament
-                </button>
+                <div className="flex space-x-4">
+                  <button
+                    className="flex-1 bg-white/40 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-all duration-300"
+                    onClick={() => window.open(tournament.link, "_blank")}
+                  >
+                    View Details
+                  </button>
+                 
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
+

@@ -43,9 +43,9 @@ export const Navbar = () => {
             <Link to="/news" className="text-white hover:text-pink-500">
               News
             </Link>
-            <button className="bg-white text-black px-6 py-2 rounded-full font-medium whitespace-nowrap">
+            <Link to ='/login' className="bg-white text-black px-6 py-2 rounded-full font-medium whitespace-nowrap">
               Log In / Sign Up
-            </button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -82,9 +82,9 @@ export const Navbar = () => {
               <Link to="/news" className="text-white hover:text-pink-500">
                 News
               </Link>
-              <button className="bg-white text-black px-6 py-2 rounded-full font-medium whitespace-nowrap">
+              <Link to ='/login'className="bg-white text-black px-6 py-2 rounded-full font-medium whitespace-nowrap">
                 Log In / Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         )}
